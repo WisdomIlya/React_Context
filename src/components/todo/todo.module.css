@@ -1,0 +1,115 @@
+/* Отдельная задача */
+.todoItem {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f3f4;
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease;
+}
+
+.todoItem:hover {
+    background: #f8f9fa;
+}
+
+.todoItem:last-child {
+    border-bottom: none;
+}
+
+.todoItem.completed {
+    opacity: 0.7;
+}
+
+
+.todoItem.removing {
+    animation: slideOut 0.3s ease forwards;
+}
+
+/* Анимации */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* Текст задачи */
+.todoText {
+    flex: 1;
+    font-size: 16px;
+    color: #495057;
+    transition: all 0.3s ease;
+}
+
+.todoItem.completed .todoText {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Кнопка удаления задачи */
+.deleteBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.deleteBtn {
+    color: #ffc107;
+}
+
+.deleteBtn:hover {
+    background: #fff3cd;
+}
+
+.deleteBtn {
+    color: #dc3545;
+}
+
+.deleteBtn:hover {
+    background: #f8d7da;
+}
+
+/* Чекбокс */
+.todoCheckbox {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #dee2e6;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.todoCheckbox.checked {
+    background: #4facfe;
+    border-color: #4facfe;
+}
+
+.todoCheckbox.checked::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
