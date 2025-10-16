@@ -3,14 +3,8 @@ import { Search } from './search/Search';
 import { Sorting } from './sorting/Sorting';
 
 export const  ControlPanel = ({
-	debouncedSearch,
-	inputValue,
-	isCreating,
-	isSorted,
     handleSearchChange,
     handleAddTodo,
-    setInputValue,
-	setIsSorted
 }) => {
 	return (
 		<>
@@ -18,14 +12,11 @@ export const  ControlPanel = ({
 				<h1 className={styles.todoTitle}>Список задач</h1>
 			</header>
 			<div className={styles.todoForm}>
-				<Search debouncedSearch={debouncedSearch}
-					inputValue={inputValue}
-					isCreating={isCreating}
+				<Search
     				handleSearchChange={handleSearchChange}
     				handleAddTodo={handleAddTodo}
-    				setInputValue={setInputValue}
 				/>
-				<Sorting isSorted={isSorted} setIsSorted={setIsSorted}/>
+				<Sorting />
 			</div>
 		</>
 	)

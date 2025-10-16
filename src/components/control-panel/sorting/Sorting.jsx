@@ -1,5 +1,5 @@
 import styles from './sorting.module.css';
-import { useApp } from '../../../../state-manager';
+import { useApp } from '../../../hooks';
 
 export const Sorting = () => {
 	const { state, actions } = useApp();
