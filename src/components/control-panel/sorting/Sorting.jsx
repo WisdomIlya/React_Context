@@ -1,18 +1,20 @@
 import styles from './sorting.module.css';
+import { useApp } from '../../../../state-manager';
 
-export const Sorting = ({isSorted, setIsSorted}) => {
+export const Sorting = () => {
+	const { state, actions } = useApp();
 
 	const handleToggleSort = () => {
-		setIsSorted(!isSorted);
+		actions.setIsSorted(!state.isSorted);
 	};
 
 	return (
 		<button
-            className={`${styles.sortBtn} ${isSorted ? styles.sortBtnActive : ''}`}
+            className={`${styles.sortBtn} ${state.isSorted ? styles.sortBtnActive : ''}`}
             onClick={handleToggleSort}
-            title={isSorted ? "Отключить сортировку" : "Сортировать по алфавиту"}
+            title={state.isSorted ? "Отключить сортировку" : "Сортировать по алфавиту"}
         >
-            {isSorted ? 'A-Z ✓' : 'A-Z'}
+            {state.isSorted ? 'A-Z ✓' : 'A-Z'}
         </button>
 	)
 }

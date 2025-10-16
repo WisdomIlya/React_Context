@@ -3,7 +3,7 @@ import { Search } from './search/Search';
 import { Sorting } from './sorting/Sorting';
 
 export const  ControlPanel = ({
-	searchQuery,
+	debouncedSearch,
 	inputValue,
 	isCreating,
 	isSorted,
@@ -18,7 +18,7 @@ export const  ControlPanel = ({
 				<h1 className={styles.todoTitle}>Список задач</h1>
 			</header>
 			<div className={styles.todoForm}>
-				<Search searchQuery={searchQuery}
+				<Search debouncedSearch={debouncedSearch}
 					inputValue={inputValue}
 					isCreating={isCreating}
     				handleSearchChange={handleSearchChange}

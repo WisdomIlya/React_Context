@@ -1,7 +1,7 @@
 import styles from './search.module.css';
 
 export const Search = ({
-	searchQuery,
+	debouncedSearch,
 	inputValue,
 	isCreating,
     handleSearchChange,
@@ -21,7 +21,7 @@ export const Search = ({
 					type="text"
 					className={styles.searchInput}
 					placeholder="Поиск задач..."
-					value={searchQuery}
+					value={debouncedSearch}
 					onChange={handleSearchChange}
 				/>
 			</div>
